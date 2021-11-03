@@ -45,7 +45,7 @@ class Model(object):
     def set_framework_dir(self, dest):
         self.framework_dir = os.path.abspath(dest)
 
-    def predict(self, smiles_list):
+    def calculate(self, smiles_list):
         tmp_folder = tempfile.mkdtemp()
         data_file = os.path.join(tmp_folder, self.DATA_FILE)
         pred_file = os.path.join(tmp_folder, self.PRED_FILE)
@@ -74,7 +74,9 @@ class Model(object):
             h = next(reader)
             R = []
             for r in reader:
-                R += [{"score": Float(r[1])}]
+                R += [{"fp": [Float(x) for x in r[2:]]}]
+        if len(R) != len(smiles_list):
+            raise Exception
         return R
 
 
@@ -128,8 +130,8 @@ class Artifact(BentoServiceArtifact):
 @artifacts([Artifact("model")])
 class Service(BentoService):
     @api(input=JsonInput(), batch=True)
-    def predict(self, input: List[JsonSerializable]):
+    def calculate(self, input: List[JsonSerializable]):
         input = input[0]
         smiles_list = [inp["input"] for inp in input]
-        output = self.artifacts.model.predict(smiles_list)
+        output = self.artifacts.model.calculate(smiles_list)
         return [output]

@@ -1,6 +1,6 @@
 # Natural-product-fingerprints
 
-Natural product fingertips
+Natural product fingerprints
 
 | Description | Input  | Output  | Training Data | Experimental Validation |
 | ------- | --- | --- | --- | --- |

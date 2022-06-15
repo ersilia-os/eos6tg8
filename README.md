@@ -4,7 +4,7 @@ Natural product fingerprints
 
 | Description | Input  | Output  | Training Data | Experimental Validation |
 | ------- | --- | --- | --- | --- |
-| A structural fingerprint based on natural products | SMILES | Fingerprints as vectors | 605,351 compounds | No |
+| A structural fingerprint inferred using neural networks and used to improve natural product representation | SMILES | Fingerprints as vectors | 605,351 compounds | No |
 
 ## Source code
 This model is publshed by Janosch Menke, Joana Massa, Oliver Koch. Natural product scores and fingerprints extracted from artificial neural networks. *Computational and Structural Biotechnology Journal*, Volume 19, 2021, Pages 4593-4602, ISSN 2001-0370, DOI: [https://doi.org/10.1016/j.csbj.2021.07.032](https://www.sciencedirect.com/science/article/pii/S2001037021003226)

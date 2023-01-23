@@ -1,26 +1,40 @@
-# Natural product fingerprints
+# Natural product fingerprint
 
-## Model Identifiers
-- Slug: Natural-product-fingerprints
-- Ersilia ID: eos6tg8
-- Tags: fingerprint,	ML,	NP
+The model uses a combination of two multilayer perceptron networks (baseline and auxiliar) and an autoencoder-like network to extract natural-product specific fingerprints that outperform traditional methods for molecular representation. The training sets correspond to the coconut database (NP) and the Zinc database (synthetic). 
 
-## Model Description 
-A structural fingerprint inferred using neural networks and used to improve natural product representation 
-- Input: SMILES 
-- Output: Vectors
-- Model type: Regression
-- Mode of training: Pretrained
-- Training data: 605,351 compounds (https://github.com/kochgroup/neural_npfp)
-- Experimentally validatedd: No 
+## Identifiers
 
-## Source code
-This model is published by Janosch Menke, Joana Massa, Oliver Koch. Natural product scores and fingerprints extracted from artificial neural networks. *Computational and Structural Biotechnology Journal*, Volume 19, 2021, Pages 4593-4602, ISSN 2001-0370, DOI: [https://doi.org/10.1016/j.csbj.2021.07.032](https://www.sciencedirect.com/science/article/pii/S2001037021003226)
-- Code: https://github.com/kochgroup/neural_npfp
-- Checkpoints: https://github.com/kochgroup/neural_npfp/blob/main/neural_npfp/model.py
+* EOS model ID: `eos6tg8`
+* Slug: `natural-product-fingerprint`
+
+## Characteristics
+
+* Input: `Compound`
+* Input Shape: `Single`
+* Task: `Representation`
+* Output: `Descriptor`
+* Output Type: `String`
+* Output Shape: `List`
+* Interpretation: Descriptor of a molecule
+
+## References
+
+* [Publication](https://www.sciencedirect.com/science/article/pii/S2001037021003226?via%3Dihub#f0010)
+* [Source Code](https://github.com/kochgroup/neural_npfp)
+* Ersilia contributor: [miquelduranfrigola](https://github.com/miquelduranfrigola)
+
+## Citation
+
+If you use this model, please cite the [original authors](https://www.sciencedirect.com/science/article/pii/S2001037021003226?via%3Dihub#f0010) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
 
 ## License
-The GPL-v3 license applies to all parts of this repository and is located at the main folder
 
-## History
-- Model was downloaded on September 28, 2021
+This package is licensed under a GPL-3.0 license. The model contained within this package is licensed under a None license.
+
+Notice: Ersilia grants access to these models 'as is' provided by the original authors, please refer to the original code repository and/or publication if you use the model in your research.
+
+## About Us
+
+The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.
+
+[Help us](https://www.ersilia.io/donate) achieve our mission!

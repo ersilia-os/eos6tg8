@@ -23,6 +23,11 @@ The model uses a combination of two multilayer perceptron networks (baseline and
 * [Source Code](https://github.com/kochgroup/neural_npfp)
 * Ersilia contributor: [miquelduranfrigola](https://github.com/miquelduranfrigola)
 
+## Ersilia model URLs
+* [GitHub](https://github.com/ersilia-os/eos6tg8)
+* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6tg8.zip)
+* [DockerHub](https://hub.docker.com/r/ersiliaos/eos6tg8) (AMD64)
+
 ## Citation
 
 If you use this model, please cite the [original authors](https://www.sciencedirect.com/science/article/pii/S2001037021003226?via%3Dihub#f0010) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).

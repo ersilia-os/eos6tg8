@@ -66,10 +66,9 @@ def fingerprints(smiles):
     out=pd.concat([data.iloc[:,args.smiles], npl,nnfp], axis=1)
     #out.columns[1] = "nn_naturalproductscore"
     #output_path="/".join(args.input.split("/")[:-1])
+    
+    # Remove the smile columns
     out= out.drop(out.columns[:1], axis=1)
-
-    # print(out.values.flatten())
-    print(out)
     print("Finished!")
     return out.values
     #out.to_csv(output_path+"/"+str(args.model) + "_npfp_"+ time.strftime("%Y%m%d-%H%M%S")+".csv", index=False)
@@ -106,7 +105,7 @@ with open(output_file, "w") as f:
     writer = csv.writer(f)
     writer.writerow(["nn_naturalproductscore"])  # header
     for o in outputs:
-        writer.writerow([o])
+        writer.writerow(o)
 
 
 

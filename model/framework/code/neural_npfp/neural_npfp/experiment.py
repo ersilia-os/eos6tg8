@@ -13,7 +13,9 @@ import argparse
 import os
 #%% load the data
 parser = argparse.ArgumentParser(description='List the content of a folder')
-parser.add_argument("--input",default = "../settings/settings.yml",const = "../settings/settings.yml",nargs ="?",type = str,help="Path to the settings file.")
+settings_path= os.path.abspath('../../../../framewok/settings/settings.yml')
+
+parser.add_argument("--input",default = settings_path,const = settings_path,nargs ="?",type = str,help="Path to the settings file.")
 
 args = parser.parse_args()
 manual_seeds = [42,2344,87865,784,677]

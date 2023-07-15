@@ -1,4 +1,0 @@
-[core]
-    remote = public_repo
-['remote "public_repo"']
-    url = gdrive://1NXcMWtA758-Ed5VbSSeb3KNi0sUV9uJE

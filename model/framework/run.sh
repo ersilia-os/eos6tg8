@@ -1,0 +1,1 @@
+python $1/code/neural_npfp/neural_npfp/main.py $2 $3 -s smiles

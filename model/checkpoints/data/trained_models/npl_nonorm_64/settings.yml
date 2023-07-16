@@ -1,0 +1,51 @@
+ae_model:
+  dropout: 0.2
+  epochs: 300
+  layers:
+  - 2048
+  - 512
+  - 64
+  - 512
+  - 2048
+  lr: 0.0001
+  norm: 0
+  weights:
+  - 99/100
+  - 1/100
+  with_npl: true
+aux_model:
+  baseline: false
+  dropout: 0.2
+  epochs: 20
+  layers:
+  - 2048
+  - 1024
+  - 1024
+  - 64
+  - 49
+  lr: 0.0005
+  norm: 0
+  with_npl: true
+baseline_model:
+  baseline: true
+  dropout: 0.2
+  epochs: 20
+  layers:
+  - 2048
+  - 1024
+  - 1024
+  - 64
+  - 49
+  lr: 0.0005
+  norm: 0
+  with_npl: true
+data:
+  batch_size: 128
+  descriptor_file: ../data/descriptors.csv
+  fp_file: ../data/coconut_decoy.csv
+  remove_val_file: ../data/to_keep_molecules.pkl
+gcn_model:
+  test:
+  - None
+note: ''
+path_to_save: ../data/trained_models/npl_nonorm_64

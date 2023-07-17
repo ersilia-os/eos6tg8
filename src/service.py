@@ -26,13 +26,27 @@ def Float(x):
         return float(x)
     except:
         return None
+    
+def String(x):
+    x = str(x)
+    if not x:
+        return None
+    if x == "nan":
+        return None
+    if x == "null":
+        return None
+    if x == "False":
+        return None
+    if x == "None":
+        return None
+    return x
 
 
 class Model(object):
     def __init__(self):
-        self.DATA_FILE = "data.csv"
-        self.PRED_FILE = "pred.csv"
-        self.RUN_FILE = "run.sh"
+        self.DATA_FILE = "_data.csv"
+        self.OUTPUT_FILE = "_output.csv"
+        self.RUN_FILE = "_run.sh"
         self.LOG_FILE = "run.log"
 
     def load(self, framework_dir, checkpoints_dir):
@@ -45,22 +59,22 @@ class Model(object):
     def set_framework_dir(self, dest):
         self.framework_dir = os.path.abspath(dest)
 
-    def calculate(self, smiles_list):
-        tmp_folder = tempfile.mkdtemp()
+    def run(self, smiles_list): # <-- EDIT: rename if model does not do predictions (e.g. it does calculations)
+        tmp_folder = tempfile.mkdtemp(prefix="eos-")
         data_file = os.path.join(tmp_folder, self.DATA_FILE)
-        pred_file = os.path.join(tmp_folder, self.PRED_FILE)
+        output_file = os.path.join(tmp_folder, self.OUTPUT_FILE)
         log_file = os.path.join(tmp_folder, self.LOG_FILE)
         with open(data_file, "w") as f:
             f.write("smiles"+os.linesep)
             for smiles in smiles_list:
-                f.write(smiles + os.linesep)
+                f.write(smiles+os.linesep)
         run_file = os.path.join(tmp_folder, self.RUN_FILE)
         with open(run_file, "w") as f:
             lines = [
-                "python {0}/neural_npfp/neural_npfp/get_fp.py {1} {2} -s smiles".format(
+                "bash {0}/run.sh {0} {1} {2}".format( # <-- EDIT: match method name (run_predict.sh, run_calculate.sh, etc.)
                     self.framework_dir,
                     data_file,
-                    pred_file
+                    output_file
                 )
             ]
             f.write(os.linesep.join(lines))
@@ -69,15 +83,21 @@ class Model(object):
             subprocess.Popen(
                 cmd, stdout=fp, stderr=fp, shell=True, env=os.environ
             ).wait()
-        with open(pred_file, "r") as f:
+        with open(output_file, "r") as f:
             reader = csv.reader(f)
             h = next(reader)
             R = []
             for r in reader:
-                R += [{"fp": [Float(x) for x in r[2:]]}]
-        if len(R) != len(smiles_list):
-            raise Exception
-        return R
+                R += [{"fp": [Float(x) for x in r]}] # <-- EDIT: Modify according to type of output (Float, String...)
+        meta = {
+            "outcome": h
+        }
+        result = {
+            "result": R,
+            "meta": meta
+        }
+        shutil.rmtree(tmp_folder)
+        return result
 
 
 class Artifact(BentoServiceArtifact):
@@ -130,8 +150,8 @@ class Artifact(BentoServiceArtifact):
 @artifacts([Artifact("model")])
 class Service(BentoService):
     @api(input=JsonInput(), batch=True)
-    def calculate(self, input: List[JsonSerializable]):
+    def run(self, input: List[JsonSerializable]): # <-- EDIT: rename if necessary 
         input = input[0]
         smiles_list = [inp["input"] for inp in input]
-        output = self.artifacts.model.calculate(smiles_list)
+        output = self.artifacts.model.run(smiles_list) # <-- EDIT: rename if necessary
         return [output]

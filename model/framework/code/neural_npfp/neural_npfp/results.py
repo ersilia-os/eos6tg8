@@ -18,11 +18,16 @@ import yaml
 import matplotlib.patches as mpatches
 from scipy.stats import ttest_ind, ttest_rel
 from rdkit.Chem.Draw import MolsToGridImage
+
+
 import argparse
 #%% Colors
 
+MODEL_PATH= "../../../../checkpoints/data/trained_models/npl_nonorm_64/"
+
+
 parser = argparse.ArgumentParser(description='List the content of a folder')
-parser.add_argument("--input",default = "../data/trained_models/npl_nonorm_64/",const = "../data/trained_models/npl_nonorm_64/",nargs ="?",type = str,help="Path to the trained Models")
+parser.add_argument("--input",default = MODEL_PATH,const = MODEL_PATH,nargs ="?",type = str,help="Path to the trained Models")
 
 args = parser.parse_args()
 

@@ -35,8 +35,9 @@ assert input_len == output_len
 # write output in a .csv file
 with open(output_file, "w") as f:
     writer = csv.writer(f)
-    writer.writerow(["nn_naturalproductscore"])  # header
+    writer.writerow([f"feature_{i:02}" for i in range(65)])  # header
     for o in outputs:
+        print(len(o))
         writer.writerow(o)
 
 

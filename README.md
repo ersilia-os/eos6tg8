@@ -2,8 +2,7 @@
 
 The model uses a combination of two multilayer perceptron networks (baseline and auxiliar) and an autoencoder-like network to extract natural-product specific fingerprints that outperform traditional methods for molecular representation. The training sets correspond to the coconut database (NP) and the Zinc database (synthetic). 
 
-This model was incorporated on 2021-11-03.
-
+This model was incorporated on 2021-11-03.Last packaged on 2025-10-13.
 
 ## Information
 ### Identifiers
@@ -51,12 +50,12 @@ _10 of 65 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `120`
 - **Environment Size (Mb):** `2156`
-- **Image Size (Mb):** `1392.43`
+- **Image Size (Mb):** `1427.77`
 
 **Computational Performance (seconds):**
-- 10 inputs: `33.01`
-- 100 inputs: `22.92`
-- 10000 inputs: `397.36`
+- 10 inputs: `28.29`
+- 100 inputs: `18.28`
+- 10000 inputs: `91.7`
 
 ### References
 - **Source Code**: [https://github.com/kochgroup/neural_npfp](https://github.com/kochgroup/neural_npfp)

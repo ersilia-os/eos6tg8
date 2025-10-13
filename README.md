@@ -4,6 +4,7 @@ The model uses a combination of two multilayer perceptron networks (baseline and
 
 This model was incorporated on 2021-11-03.
 
+
 ## Information
 ### Identifiers
 - **Ersilia Identifier:** `eos6tg8`
@@ -13,7 +14,7 @@ This model was incorporated on 2021-11-03.
 - **Task:** `Representation`
 - **Subtask:** `Featurization`
 - **Biomedical Area:** `Any`
-- **Target Organism:** `Not Applicable`
+- **Target Organism:** `Any`
 - **Tags:** `Natural product`, `Fingerprint`, `Descriptor`
 
 ### Input

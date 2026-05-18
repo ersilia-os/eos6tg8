@@ -59,7 +59,7 @@ _10 of 65 columns are shown_
 
 ### References
 - **Source Code**: [https://github.com/kochgroup/neural_npfp](https://github.com/kochgroup/neural_npfp)
-- **Publication**: [https://www.sciencedirect.com/science/article/pii/S2001037021003226?via%3Dihub#f0010](https://www.sciencedirect.com/science/article/pii/S2001037021003226?via%3Dihub#f0010)
+- **Publication**: [https://doi.org/10.1016/j.csbj.2021.07.032](https://doi.org/10.1016/j.csbj.2021.07.032)
 - **Publication Type:** `Peer reviewed`
 - **Publication Year:** `2021`
 - **Ersilia Contributor:** [miquelduranfrigola](https://github.com/miquelduranfrigola)

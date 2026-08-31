@@ -28,16 +28,16 @@ This model was incorporated on 2021-11-03.Last packaged on 2025-10-13.
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
 |------|------|-----------|-------------|
-| feature_00 | float |  | Feature 0 of the natural product fingerprint |
-| feature_01 | float |  | Feature 1 of the natural product fingerprint |
-| feature_02 | float |  | Feature 2 of the natural product fingerprint |
-| feature_03 | float |  | Feature 3 of the natural product fingerprint |
-| feature_04 | float |  | Feature 4 of the natural product fingerprint |
-| feature_05 | float |  | Feature 5 of the natural product fingerprint |
-| feature_06 | float |  | Feature 6 of the natural product fingerprint |
-| feature_07 | float |  | Feature 7 of the natural product fingerprint |
-| feature_08 | float |  | Feature 8 of the natural product fingerprint |
-| feature_09 | float |  | Feature 9 of the natural product fingerprint |
+| feat_00 | float |  | Feature 0 of the natural product fingerprint |
+| feat_01 | float |  | Feature 1 of the natural product fingerprint |
+| feat_02 | float |  | Feature 2 of the natural product fingerprint |
+| feat_03 | float |  | Feature 3 of the natural product fingerprint |
+| feat_04 | float |  | Feature 4 of the natural product fingerprint |
+| feat_05 | float |  | Feature 5 of the natural product fingerprint |
+| feat_06 | float |  | Feature 6 of the natural product fingerprint |
+| feat_07 | float |  | Feature 7 of the natural product fingerprint |
+| feat_08 | float |  | Feature 8 of the natural product fingerprint |
+| feat_09 | float |  | Feature 9 of the natural product fingerprint |
 
 _10 of 65 columns are shown_
 ### Source and Deployment

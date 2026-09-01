@@ -9,7 +9,6 @@ import numpy as np
 from sklearn.metrics import mean_absolute_error, roc_auc_score
 from scipy.special import expit
 
-import seaborn as sns
 
 class MLP(Module):
     def __init__(self, layer_list, num_clf,dropout):
@@ -193,6 +192,8 @@ class train_model():
                 return self.best_model    
 
     def plot_loss(self):
+        import seaborn as sns
+
         sns.lineplot(np.arange(len(self.measures["loss"]["train"])), self.measures["loss"]["train"])
         sns.lineplot(np.arange(len(self.measures["loss"]["train"])), self.measures["loss"]["val"])
 

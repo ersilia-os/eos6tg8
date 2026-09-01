@@ -2,7 +2,7 @@
 
 The model uses a combination of two multilayer perceptron networks (baseline and auxiliar) and an autoencoder-like network to extract natural-product specific fingerprints that outperform traditional methods for molecular representation. The training sets correspond to the coconut database (NP) and the Zinc database (synthetic). 
 
-This model was incorporated on 2021-11-03.Last packaged on 2025-10-13.
+This model was incorporated on 2021-11-03.Last packaged on 2026-09-01.
 
 ## Information
 ### Identifiers
@@ -44,18 +44,18 @@ _10 of 65 columns are shown_
 - **Source:** `Local`
 - **Source Type:** `External`
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos6tg8](https://hub.docker.com/r/ersiliaos/eos6tg8)
-- **Docker Architecture:** `AMD64`
+- **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6tg8.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6tg8.zip)
 
 ### Resource Consumption
 - **Model Size (Mb):** `120`
 - **Environment Size (Mb):** `1144`
-- **Image Size (Mb):** `1427.77`
+- **Image Size (Mb):** `1310.39`
 
 **Computational Performance (seconds):**
-- 10 inputs: `28.29`
-- 100 inputs: `18.28`
-- 10000 inputs: `91.7`
+- 10 inputs: `25.39`
+- 100 inputs: `15.33`
+- 10000 inputs: `70.99`
 
 ### References
 - **Source Code**: [https://github.com/kochgroup/neural_npfp](https://github.com/kochgroup/neural_npfp)

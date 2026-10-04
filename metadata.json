@@ -3,7 +3,7 @@
     "Slug": "natural-product-fingerprint",
     "Status": "Ready",
     "Title": "Natural product fingerprint",
-    "Description": "The model uses a combination of two multilayer perceptron networks (baseline and auxiliar) and an autoencoder-like network to extract natural-product specific fingerprints that outperform traditional methods for molecular representation. The training sets correspond to the coconut database (NP) and the Zinc database (synthetic). ",
+    "Description": "Produces a 65-dimensional fingerprint tuned to natural product character, extracted from the hidden layer of a neural network trained to separate natural products from synthetic compounds. Menke and colleagues showed that a network trained for this classification learns an internal representation useful well beyond the original task, so the fingerprint can substitute for conventional descriptors in downstream models. It encodes learned features rather than defined substructures, so dimensions cannot be traced to specific chemical groups.",
     "Deployment": [
         "Local"
     ],
@@ -20,7 +20,7 @@
     ],
     "Output Dimension": 65,
     "Output Consistency": "Fixed",
-    "Interpretation": "Descriptor of a molecule",
+    "Interpretation": "65 learned features describing natural product character extracted from a neural network.",
     "Tag": [
         "Natural product",
         "Fingerprint",

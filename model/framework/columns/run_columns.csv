@@ -1,4 +1,5 @@
 name,type,direction,description
+np_score,float,high,Natural product score from the network's natural product vs synthetic classifier (logit); higher values indicate more natural-product-like molecules
 feat_00,float,,Feature 0 of the natural product fingerprint
 feat_01,float,,Feature 1 of the natural product fingerprint
 feat_02,float,,Feature 2 of the natural product fingerprint
@@ -63,4 +64,3 @@ feat_60,float,,Feature 60 of the natural product fingerprint
 feat_61,float,,Feature 61 of the natural product fingerprint
 feat_62,float,,Feature 62 of the natural product fingerprint
 feat_63,float,,Feature 63 of the natural product fingerprint
-feat_64,float,,Feature 64 of the natural product fingerprint

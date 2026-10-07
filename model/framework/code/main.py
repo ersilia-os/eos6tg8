@@ -2,6 +2,7 @@
 import os
 import csv
 import sys
+import math
 
 
 from neural_npfp.neural_npfp.get_fp import fingerprints
@@ -33,11 +34,13 @@ output_len = len(outputs)
 assert input_len == output_len
 
 # write output in a .csv file
+# first column is the natural product score, followed by the 64 fingerprint features
+# molecules that could not be processed are written as empty cells
 with open(output_file, "w") as f:
     writer = csv.writer(f)
-    writer.writerow([f"feat_{i:02}" for i in range(65)])  # header
+    writer.writerow(["np_score"] + [f"feat_{i:02}" for i in range(64)])  # header
     for o in outputs:
-        writer.writerow(o)
+        writer.writerow([None if math.isnan(v) else v for v in o])
 
 
 

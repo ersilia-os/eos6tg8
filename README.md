@@ -2,7 +2,7 @@
 
 Produces a 64-value fingerprint tuned to natural product character, read from the last hidden layer of a feed-forward network trained to tell natural products from synthetic molecules, and returns the natural product score itself as the first column. Menke and colleagues trained it on 394,939 COCONUT natural products against 210,412 ZINC decoys, and report that the extracted representation beats ECFP4 and the natural-product-specific NC\_MFP on their screening benchmarks. Dimensions are learned, so none maps onto a defined chemical group.
 
-This model was incorporated on 2021-11-03.Last packaged on 2026-09-01.
+This model was incorporated on 2021-11-03.Last packaged on 2026-10-07.
 
 ## Information
 ### Identifiers
@@ -50,12 +50,12 @@ _10 of 65 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `120`
 - **Environment Size (Mb):** `1144`
-- **Image Size (Mb):** `1310.39`
+- **Image Size (Mb):** `1313.43`
 
 **Computational Performance (seconds):**
-- 10 inputs: `25.39`
-- 100 inputs: `15.33`
-- 10000 inputs: `70.99`
+- 10 inputs: `25.3`
+- 100 inputs: `13.85`
+- 10000 inputs: `58.16`
 
 ### References
 - **Source Code**: [https://github.com/kochgroup/neural_npfp](https://github.com/kochgroup/neural_npfp)

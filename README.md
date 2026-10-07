@@ -1,6 +1,6 @@
 # Natural product fingerprint
 
-Produces a 65-dimensional fingerprint tuned to natural product character, extracted from the hidden layer of a neural network trained to separate natural products from synthetic compounds. Menke and colleagues showed that a network trained for this classification learns an internal representation useful well beyond the original task, so the fingerprint can substitute for conventional descriptors in downstream models. It encodes learned features rather than defined substructures, so dimensions cannot be traced to specific chemical groups.
+Produces a 64-value fingerprint tuned to natural product character, read from the last hidden layer of a feed-forward network trained to tell natural products from synthetic molecules, and returns the natural product score itself as the first column. Menke and colleagues trained it on 394,939 COCONUT natural products against 210,412 ZINC decoys, and report that the extracted representation beats ECFP4 and the natural-product-specific NC_MFP on their screening benchmarks. Dimensions are learned, so none maps onto a defined chemical group.
 
 This model was incorporated on 2021-11-03.Last packaged on 2026-09-01.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2021-11-03.Last packaged on 2026-09-01.
 ### Output
 - **Output Dimension:** `65`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** 65 learned features describing natural product character extracted from a neural network.
+- **Interpretation:** Natural product score followed by the 64 learned fingerprint features from the same network.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |

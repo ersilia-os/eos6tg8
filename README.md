@@ -2,7 +2,8 @@
 
 Produces a 64-value fingerprint tuned to natural product character, read from the last hidden layer of a feed-forward network trained to tell natural products from synthetic molecules, and returns the natural product score itself as the first column. Menke and colleagues trained it on 394,939 COCONUT natural products against 210,412 ZINC decoys, and report that the extracted representation beats ECFP4 and the natural-product-specific NC\_MFP on their screening benchmarks. Dimensions are learned, so none maps onto a defined chemical group.
 
-This model was incorporated on 2021-11-03.Last packaged on 2026-10-07.
+This model was incorporated on 2021-11-03.
+Last packaged on 2026-10-07.
 
 ## Information
 ### Identifiers
@@ -46,6 +47,7 @@ _10 of 65 columns are shown_
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos6tg8](https://hub.docker.com/r/ersiliaos/eos6tg8)
 - **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6tg8.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos6tg8.zip)
+- **Apptainer**: [https://models-sif.s3.eu-north-1.amazonaws.com/eos6tg8_v3.sif](https://models-sif.s3.eu-north-1.amazonaws.com/eos6tg8_v3.sif)
 
 ### Resource Consumption
 - **Model Size (Mb):** `120`
